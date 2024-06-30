@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Header from "./Header";
 import Main from "./Main";
 import Loader from "./Loader";
@@ -15,6 +15,8 @@ const initialState = {
   answer: null,
   points: 0,
 };
+
+
 
 function reducer(state, action) {
   switch (action.type) {
@@ -61,6 +63,7 @@ function reducer(state, action) {
 }
 
 export default function App() {
+  const [s, sets] = useState(0)
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { questions, status, index, answer, points } = state;
