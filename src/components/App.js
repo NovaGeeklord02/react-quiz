@@ -63,7 +63,7 @@ function reducer(state, action) {
 }
 
 export default function App() {
-  const [s, sets] = useState(0)
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { questions, status, index, answer, points } = state;
